@@ -1,0 +1,99 @@
+body {
+    background: url("Bg.jpg");
+    background-size: cover;
+}
+
+#bg {
+    width: 100%;
+    padding-bottom: 600px;
+    animation: bg 10s infinite;
+}
+
+@keyframes bg {
+    from {
+        background: rgba(0, 0, 0, 0.4);
+    }
+
+    to {
+        background: rgba(255, 255, 255, 0.4);
+    }
+}
+
+.heading {
+    font-size: 50px;
+    font-family: 'Leckerli One', cursive;
+    letter-spacing: 3px;
+    padding: 20px;
+    top: 0;
+    margin: 0;
+    width: 100%;
+    color: white;
+    background: rgb(166, 255, 0);
+    animation: txt 5s infinite;
+
+}
+
+@keyframes txt {
+    from {
+        color: rgb(226, 43, 98);
+    }
+
+    to {
+        color: rgb(0, 57, 110);
+    }
+}
+
+.note {
+    letter-spacing: 1px;
+    font-size: 20px;
+    color: black;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+
+}
+
+#footer {
+    bottom: 0;
+    position: fixed;
+    width: 100%;
+    color: white;
+    background-color: rgb(22, 22, 22);
+    line-height: 3;
+    font-size: 22px;
+
+}
+
+canvas {
+    border-radius: 50px;
+    animation: bd 3s infinite;
+    animation: shadow 10s infinite;
+    border: 10px white solid;
+}
+
+@keyframes bd {
+    from {
+        border-width: 10px ;
+    }
+
+    to {
+        border-width: 2px ;
+    }
+}
+@keyframes shadow{
+    from{
+        box-shadow: 1px 1px 38px black;
+    }
+    to{
+        box-shadow: 1px 1px 38px white; 
+    }
+}
+#warning{
+    color: white;
+    background: red;
+    padding: 5px;
+    font-size: 20px;
+    padding-top: 20px;
+    
+}
+#close:hover{
+    cursor:pointer;
+}
