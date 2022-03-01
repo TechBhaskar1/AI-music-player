@@ -3,6 +3,7 @@ song2="";
 leftWrist="";
 rightWrist="";
 leftWristScore=0;
+rightWristScore = 0;
 function preload(){
     song1=loadSound("AstrounautInTheOcean.webm");
     song2=loadSound("HarryPotter.webm")
@@ -26,6 +27,7 @@ function gotPoses(results){
     if(results.length>0){
         console.log(results);
         leftWristScore = results[0].pose.keypoints[9].score;
+        rightWristScore = results[0].pose.keypoints[10].score;
         console.log("leftWristScore :"+leftWristScore);
 
         leftWristX = results[0].pose.leftWrist.x;
@@ -46,8 +48,17 @@ function draw(){
     stroke("red")
     if(leftWristScore>0.2){
         circle(leftWristX,leftWristY,50);
+        document.getElementById("song_name").innerHTML= "Song : Astraonaut In The Ocean";
+
         song2.stop();
         song1.stop();
         song1.play();
+    }
+    if(rightWristScore>0.2){
+        circle(rightWristX, rightWristY , 50);
+        document.getElementById("song_name").innerHTML= "Song :HarryPotter theme Song";
+        song1.stop();
+        song2.stop();
+        song2.play();
     }
 }
